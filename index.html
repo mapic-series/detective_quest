@@ -348,7 +348,7 @@
             <h1>Bienvenue, détective</h1>
             <p>Vous intégrez une unité spéciale chargée d'une affaire sensible liée à un réseau clandestin opérant en ville.</p> 
             <p>Les traces existent — mais elles ont été soigneusement dissimulées.</p>
-            <p> <span style="color: #BA1F33"><b>Votre mission :</b></span> recouper les indices et identifier qui a tué le chef de mafia.</p>
+            <p> <span style="color: #BA1F33"><b>Votre mission :</b></span> rassembler les indices et découvrir qui a assassiné le chef de la mafia.</p>
             <div class="button-container">
                 <button class="btn" onclick="goToPage(2)">Je suis prêt.e</button>
             </div>
@@ -357,8 +357,8 @@
         <!-- Page 2: Crime Scene — 3 questions on one page -->
         <div class="page" id="page2">
             <h2>Étape 1 : trouver la scène du crime</h2>
-            <p>Vous pouvez obtenir l'accès à une information classifiée si vous fournissez la bonne réponse.</p>
-            <p>Regardez cette scène du premier épisode et devinez ce qui se passe ici. Pour répondre correctement, soyez attentif au cinéma !</p>
+            <p>Vous pouvez accéder à une information classifiée si vous répondez correctement aux questions suivantes.</p>
+            <p>Regardez ces scènes des deux premiers épisodes. Soyez attentif.ve aux détails !</p>
 
             <!-- Question 1 -->
             <div style="display: flex; justify-content: center; margin: 30px 0;">
@@ -371,8 +371,8 @@
 
             <div class="choices" id="choices1">
                 <button class="btn" onclick="selectQ(1, this, false)">Teddy recherche un criminel en fuite</button>
-                <button class="btn" onclick="selectQ(1, this, false)">Teddy cache actuellement un sac de substances illégales</button>
-                <button class="btn" onclick="selectQ(1, this, true)">Teddy recherche des traces de sang étranges</button>
+                <button class="btn" onclick="selectQ(1, this, false)">Teddy cache un sac de substances illégales</button>
+                <button class="btn" onclick="selectQ(1, this, true)">Teddy examine des traces de sang étranges</button>
             </div>
 
             <!-- Question 2 -->
@@ -388,7 +388,7 @@
 
             <div class="choices" id="choices2">
                 <button class="btn" onclick="selectQ(2, this, false)">Franklin partage ses drogues avec lui</button>
-                <button class="btn" onclick="selectQ(2, this, true)">Franklin permet à Avi de lui tirer dessus</button>
+                <button class="btn" onclick="selectQ(2, this, true)">Franklin accepte de se faire tirer dessus par Avi</button>
                 <button class="btn" onclick="selectQ(2, this, false)">Franklin bat Avi en combat</button>
             </div>
 
@@ -401,7 +401,7 @@
                 </div>
             </div>
 
-            <div class="question">Que veulent ces deux à Franklin ?</div>
+            <div class="question">Que veulent ces deux types à Franklin ?</div>
 
             <div class="choices" id="choices3">
                 <button class="btn" onclick="selectQ(3, this, false)">Ils achètent sa moto</button>
@@ -419,7 +419,7 @@
         <!-- Page 3a: Wrong Answer -->
         <div class="page" id="page3a">
             <h2>Réponse acceptée !</h2>
-            <p>Grâce aux informations que vous nous avez fournies, nous savons désormais que le meurtre a eu lieu <span style="color: #BA1F33"><b>au restaurant de luxe préféré du chef de la mafia</b></span>.</p>
+            <p>Grâce aux informations que vous avez fournies, nous pouvons désormais confirmer que le meurtre a eu lieu <span style="color: #BA1F33"><b>dans le restaurant de luxe préféré du chef de la mafia</b></span>.</p>
             <p>Prêt.e à continuer ?</p>
             <div class="button-container">
                 <button class="btn" onclick="selectChoice(1, 'au restaurant de luxe préféré du chef de la mafia'); goToPage(4)">Je suis prêt.e</button>
@@ -429,7 +429,7 @@
         <!-- Page 3c: Correct Answer -->
         <div class="page" id="page3c">
             <h2>Réponse acceptée !</h2>
-            <p>Grâce aux informations que vous nous avez fournies, nous savons désormais que le meurtre a eu lieu <span style="color: #BA1F33"><b>dans la villa du chef mafieux</b></span>.</p>
+            <p>Grâce aux informations que vous avez fournies, nous pouvons désormais confirmer que le meurtre a eu lieu <span style="color: #BA1F33"><b>dans la villa du chef mafieux</b></span>.</p>
             <p>Prêt.e à continuer ?</p>
             <div class="button-container">
                 <button class="btn" onclick="selectChoice(1, 'dans la villa du chef mafieux'); goToPage(4)">Je suis prêt.e</button>
@@ -439,8 +439,8 @@
         <!-- Page 4: Fingerprint Analysis -->
         <div class="page" id="page4">
             <h2>Étape 2 : déterminer le meurtrier</h2>
-            <p>Vous disposez d'un scan des empreintes digitales laissées sur les lieux.</p>
-            <p>Comparez-les avec celles que nous avons dans nos fichiers sur les gangsters les plus recherchés de cette ville, et trouvez qui se trouvait sur les lieux du crime la nuit du meurtre !</p>
+            <p>Vous avez accès au scan des empreintes digitales retrouvées sur les lieux.</p>
+            <p>Comparez-les avec celles de nos criminels les plus recherchés et identifiez qui était présent sur la scène du crime la nuit du meurtre.</p>
             <div style="text-align: center;">
                 <img src="https://raw.githubusercontent.com/arinaokun42-beep/detective_quest/main/images/fingerprint_1.jpg"
                      alt="Fingerprint"
@@ -493,8 +493,8 @@
         <!-- Page 5a: Decoder for Suspect 1 -->
         <div class="page" id="page5a">
             <h2>Trouvons le nom de votre suspect !</h2>
-            <p>Le nom du suspect est écrit en code. Pouvez-vous le déchiffrer ?</p>
-            <p>Les touches d'un vieux téléphone Nokia peuvent vous aider à trouver la combinaison...</p>
+            <p>Le nom du suspect est codé. À vous de le déchiffrer.</p>
+            <p>Un indice : les touches d’un vieux téléphone Nokia vous permettront de retrouver la bonne combinaison...</p>
             <div style="text-align: center;">
                 <img src="https://raw.githubusercontent.com/arinaokun42-beep/detective_quest/main/images/id_1.png"
                      alt="Suspect 1 ID"
@@ -517,8 +517,8 @@
         <!-- Page 5b: Decoder for Suspect 2 -->
         <div class="page" id="page5b">
             <h2>Trouvons le nom de votre suspect !</h2>
-            <p>Le nom du suspect est écrit en code. Pouvez-vous le déchiffrer ?</p>
-            <p>Les touches d'un vieux téléphone Nokia peuvent vous aider à trouver la combinaison...</p>
+           <p>Le nom du suspect est codé. À vous de le déchiffrer.</p>
+            <p>Un indice : les touches d’un vieux téléphone Nokia vous permettront de retrouver la bonne combinaison...</p>
             <div style="text-align: center;">
                 <img src="https://raw.githubusercontent.com/arinaokun42-beep/detective_quest/main/images/id_2.png"
                      alt="Suspect 2 ID"
@@ -541,8 +541,8 @@
         <!-- Page 5c: Decoder for Suspect 3 -->
         <div class="page" id="page5c">
             <h2>Trouvons le nom de votre suspect !</h2>
-            <p>Le nom du suspect est écrit en code. Pouvez-vous le déchiffrer ?</p>
-            <p>Les touches d'un vieux téléphone Nokia peuvent vous aider à trouver la combinaison...</p>
+           <p>Le nom du suspect est codé. À vous de le déchiffrer.</p>
+            <p>Un indice : les touches d’un vieux téléphone Nokia vous permettront de retrouver la bonne combinaison...</p>
             <div style="text-align: center;">
                 <img src="https://raw.githubusercontent.com/arinaokun42-beep/detective_quest/main/images/id_3.png"
                      alt="Suspect 3 ID"
@@ -565,8 +565,8 @@
         <!-- Page 5d: Decoder for Suspect 4 -->
         <div class="page" id="page5d">
             <h2>Trouvons le nom de votre suspect !</h2>
-            <p>Le nom du suspect est écrit en code. Pouvez-vous le déchiffrer ?</p>
-            <p>Les touches d'un vieux téléphone Nokia peuvent vous aider à trouver la combinaison...</p>
+           <p>Le nom du suspect est codé. À vous de le déchiffrer.</p>
+            <p>Un indice : les touches d’un vieux téléphone Nokia vous permettront de retrouver la bonne combinaison...</p>
             <div style="text-align: center;">
                 <img src="https://raw.githubusercontent.com/arinaokun42-beep/detective_quest/main/images/id_4.png"
                      alt="Suspect 4 ID"
@@ -589,8 +589,8 @@
         <!-- Page 5e: Decoder for Suspect 5 -->
         <div class="page" id="page5e">
             <h2>Trouvons le nom de votre suspect !</h2>
-            <p>Le nom du suspect est écrit en code. Pouvez-vous le déchiffrer ?</p>
-            <p>Les touches d'un vieux téléphone Nokia peuvent vous aider à trouver la combinaison...</p>
+           <p>Le nom du suspect est codé. À vous de le déchiffrer.</p>
+            <p>Un indice : les touches d’un vieux téléphone Nokia vous permettront de retrouver la bonne combinaison...</p>
             <div style="text-align: center;">
                 <img src="https://raw.githubusercontent.com/arinaokun42-beep/detective_quest/main/images/id_5.png"
                      alt="Suspect 5 ID"
@@ -613,8 +613,8 @@
         <!-- Page 5f: Decoder for Suspect 6 -->
         <div class="page" id="page5f">
             <h2>Trouvons le nom de votre suspect !</h2>
-            <p>Le nom du suspect est écrit en code. Pouvez-vous le déchiffrer ?</p>
-            <p>Les touches d'un vieux téléphone Nokia peuvent vous aider à trouver la combinaison...</p>
+           <p>Le nom du suspect est codé. À vous de le déchiffrer.</p>
+            <p>Un indice : les touches d’un vieux téléphone Nokia vous permettront de retrouver la bonne combinaison...</p>
             <div style="text-align: center;">
                 <img src="https://raw.githubusercontent.com/arinaokun42-beep/detective_quest/main/images/id_6.png"
                      alt="Suspect 6 ID"
@@ -637,8 +637,8 @@
         <!-- Page 5g: Decoder for Suspect 7 -->
         <div class="page" id="page5g">
             <h2>Trouvons le nom de votre suspect !</h2>
-            <p>Le nom du suspect est écrit en code. Pouvez-vous le déchiffrer ?</p>
-            <p>Les touches d'un vieux téléphone Nokia peuvent vous aider à trouver la combinaison...</p>
+           <p>Le nom du suspect est codé. À vous de le déchiffrer.</p>
+            <p>Un indice : les touches d’un vieux téléphone Nokia vous permettront de retrouver la bonne combinaison...</p>
             <div style="text-align: center;">
                 <img src="https://raw.githubusercontent.com/arinaokun42-beep/detective_quest/main/images/id_7.png"
                      alt="Suspect 7 ID"
@@ -661,9 +661,9 @@
         <!-- Page 6: Weapon Selection -->
         <div class="page" id="page6">
             <h2>Étape 3 : Trouvez l'arme du crime</h2>
-            <p>Nous connaissons six armes possibles qui ont été conservées près de la scène du crime.</p>
-            <p>Parcourez le hall et recherchez-les toutes : vous les trouverez sous forme d'autocollants sur les murs.</p>
-            <p>Si l'une des armes manque, cela signifie qu'elle a été utilisée et jetée par le criminel !</p>
+            <p>Six armes possibles ont été répertoriées près de la scène du crime.</p>
+            <p>Parcourez le hall et retrouvez-les toutes : elles apparaissent sous forme d’autocollants sur les murs.</p>
+            <p>Si une seule de ces armes manque... c’est celle que le criminel a utilisée avant de la jeter.</p>
 
             <img src="https://raw.githubusercontent.com/arinaokun42-beep/detective_quest/main/images/weapons.png" alt="Crime Weapons" class="content-image" onclick="openModal('https://raw.githubusercontent.com/arinaokun42-beep/detective_quest/main/images/weapons.png')">
 
@@ -682,13 +682,13 @@
         <!-- Page 7: Results Summary -->
         <div class="page" id="page7">
             <h1>Enquête Terminée !</h1>
-            <p>Félicitations d'avoir terminé l'enquête ! Voici un résumé de votre parcours et des choix que vous avez faits.</p>
+            <p>Félicitations, vous avez mené l’enquête jusqu’au bout. Voici le récapitulatif de vos découvertes :</p>
 
             <div class="results-list" id="resultsList">
             </div>
 
             <div class="final-instruction">
-                <span style="color: #BA1F33">Maintenant, présentez les résultats de votre investigation au shérif de la ville !</span>
+                <span style="color: #BA1F33">Il ne vous reste plus qu’à transmettre vos conclusions au shérif de la ville. Bonne chance, détective.</span>
             </div>
         </div>
 

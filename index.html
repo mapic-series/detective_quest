@@ -670,14 +670,43 @@
             <div class="question">Quelle arme manque ?</div>
 
             <div class="choices">
-                <button class="btn" onclick="selectChoice(3, 'un couteau'); goToPage(7)">Un couteau</button>
-                <button class="btn" onclick="selectChoice(3, 'une corde'); goToPage(7)">Une corde</button>
-                <button class="btn" onclick="selectChoice(3, 'un pistolet'); goToPage(7)">Un pistolet</button>
-                <button class="btn" onclick="selectChoice(3, 'une tronçonneuse'); goToPage(7)">Une tronçonneuse</button>
-                <button class="btn" onclick="selectChoice(3, 'une bouteille de poison'); goToPage(7)">Une bouteille de poison</button>
+                <button class="btn" onclick="selectWeaponAndRoute('un couteau')">Un couteau</button>
+                <button class="btn" onclick="selectWeaponAndRoute('une corde')">Une corde</button>
+                <button class="btn" onclick="selectWeaponAndRoute('un fusil de chasse')">Un fusil de chasse</button>
+                <button class="btn" onclick="selectWeaponAndRoute('un pistolet')">Un pistolet</button>
+                <button class="btn" onclick="selectWeaponAndRoute('un poignard')">Un poignard</button>
+                <button class="btn" onclick="selectWeaponAndRoute('une bouteille de poison')">Une bouteille de poison</button>
             </div>
         </div>
+        
+<!-- Page 6a: Time of Crime - Wrong Location Version -->
+<div class="page" id="page6a">
+    <h2>Étape 4 : Heure du crime</h2>
+    <p>[YOUR TEXT FOR RESTAURANT VERSION - explain the context based on restaurant location]</p>
+    
+    <div class="question">[YOUR QUESTION HERE]</div>
+    
+    <div class="choices">
+        <button class="btn" onclick="selectChoice(4, '[RÉPONSE 1]'); goToPage(7)">[RÉPONSE 1]</button>
+        <button class="btn" onclick="selectChoice(4, '[RÉPONSE 2]'); goToPage(7)">[RÉPONSE 2]</button>
+        <button class="btn" onclick="selectChoice(4, '[RÉPONSE 3]'); goToPage(7)">[RÉPONSE 3]</button>
+    </div>
+</div>
 
+<!-- Page 6c: Time of Crime - Correct Location Version -->
+<div class="page" id="page6c">
+    <h2>Étape 4 : Heure du crime</h2>
+    <p>[YOUR TEXT FOR VILLA VERSION - explain the context based on villa location]</p>
+    
+    <div class="question">[YOUR QUESTION HERE]</div>
+    
+    <div class="choices">
+        <button class="btn" onclick="selectChoice(4, '[RÉPONSE 1]'); goToPage(7)">[RÉPONSE 1]</button>
+        <button class="btn" onclick="selectChoice(4, '[RÉPONSE 2]'); goToPage(7)">[RÉPONSE 2]</button>
+        <button class="btn" onclick="selectChoice(4, '[RÉPONSE 3]'); goToPage(7)">[RÉPONSE 3]</button>
+    </div>
+</div>
+        
         <!-- Page 7: Results Summary -->
         <div class="page" id="page7">
             <h1>Enquête Terminée !</h1>
@@ -706,10 +735,11 @@
         let pageHistory = [1];
 
         const questions = {
-            1: "Étape 1 : Lieu du crime",
-            2: "Étape 2 : Nom du suspect",
-            3: "Étape 3 : Arme du crime"
-        };
+    1: "Étape 1 : Lieu du crime",
+    2: "Étape 2 : Nom du suspect",
+    3: "Étape 3 : Arme du crime",
+    4: "Étape 4 : Heure du crime"
+};
 
         // Tracks correct/incorrect for the 3 sub-questions on page 2
         let q1 = null;
@@ -771,6 +801,17 @@
             goToPage(6);
         }
 
+function selectWeaponAndRoute(weapon) {
+    selectChoice(3, weapon);
+    
+    // Check if crime scene answer was correct (villa) or wrong (restaurant)
+    if (userChoices[1] === 'dans la villa du chef mafieux') {
+        goToPage('6c'); // Correct version
+    } else {
+        goToPage('6a'); // Wrong version
+    }
+}
+        
         function openModal(imageSrc) {
             document.getElementById('modalImage').src = imageSrc;
             document.getElementById('imageModal').classList.add('active');

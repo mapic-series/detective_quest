@@ -415,8 +415,7 @@
     <p>Prêt.e à continuer ?</p>
     
     <div class="button-container">
-        <button class="btn" onclick="selectChoice(1, 'le bar préféré du chef de la mafia'); goToPage(4)">Je suis prêt.e</button>
-    </div>
+<button class="btn" onclick="selectChoice(1, 'le bar préféré du chef de la mafia'); goToPage('3d')">Je suis prêt.e</button>    </div>
 </div>
 
         <!-- Page 3c: Correct Answer -->
@@ -430,9 +429,28 @@
             <p>Grâce aux informations que vous avez fournies, vous avez reçu un appel signalant que le meurtre a eu lieu <span style="color: #BA1F33"><b>dans la villa du chef mafieux</b></span>.</p>
             <p>Prêt.e à continuer ?</p>
             <div class="button-container">
-                <button class="btn" onclick="selectChoice(1, 'la villa du chef mafieux'); goToPage(4)">Je suis prêt.e</button>
+<button class="btn" onclick="selectChoice(1, 'la villa du chef mafieux'); goToPage('3d')">Je suis prêt.e</button>            
             </div>
         </div>
+
+        <!-- Page 3d: Information page before fingerprints -->
+<div class="page" id="page3d">
+    <h2>Prochaine mission : trouver l'agent infiltré</h2>
+
+    <div style="text-align: center; margin: 40px 0;">
+        <img src="https://raw.githubusercontent.com/mapic-series/detective_quest/main/images/detective.jpg"
+             alt="Detective"
+             style="max-width: 600px; width: 100%; height: auto; object-fit: contain; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+    </div>
+
+    <p>TEXT HERE</p>
+
+    <p style="text-align: center; margin-top: 40px;">Prêt.e à continuer ?</p>
+
+    <div class="button-container">
+        <button class="btn" onclick="goToPage(4)">Je suis prêt.e</button>
+    </div>
+</div>
 
         <!-- Page 4: Fingerprint Analysis -->
         <div class="page" id="page4">

@@ -330,6 +330,12 @@
             <p>Vous intégrez une unité spéciale chargée d'une affaire sensible liée à un réseau clandestin opérant en ville.</p> 
             <p> <span style="color: #BA1F33"><b>Votre mission :</b></span> rassembler les indices et découvrir qui a assassiné le chef de la mafia et dans quelles circonstances.</p>
             <p>Aucune réponse ne sera confirmée avant la fin. Faites donc attention : une seule mauvaise réponse peut vous mener sur une fausse piste...</p>
+             <h2 style="padding-top: 30px; padding-bottom: 10px;">Choisissez votre nom de code / nom d'équipe</h2>
+            
+            <div style="margin: 20px 0;">
+                <input type="text" id="playerName" placeholder="Entrez votre nom..."
+                       style="width: 100%; max-width: 400px; padding: 15px; font-size: 1.1em; font-family: 'Montserrat', cursive; border: 2px solid #f98fc9; border-radius: 10px; margin: 10px auto; display: block; background: rgba(255, 255, 255, 0.9); color: #24031b; text-align: center;">
+            </div>
             <div class="button-container">
                 <button class="btn" onclick="goToPage(2)">Je suis prêt.e</button>
             </div>
@@ -829,6 +835,12 @@
             }
         }
 
+function saveNameAndStart() {
+            const playerName = document.getElementById('playerName').value;
+            userChoices[0] = playerName || "Anonyme"; // Store name at index 0, default to "Anonyme" if empty
+            goToPage(2);
+        }
+        
         function goToPage(pageNumber) {
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
@@ -908,6 +920,28 @@ function selectWeaponAndRoute(weapon) {
             const resultsContainer = document.getElementById('resultsList');
             resultsContainer.innerHTML = '';
 
+            // Show player/team name first
+            if (userChoices[0]) {
+                const nameItem = document.createElement('div');
+                nameItem.style.marginBottom = '40px';
+                nameItem.style.paddingBottom = '30px';
+                nameItem.style.borderBottom = '3px solid rgba(249, 143, 201, 0.5)';
+                
+                const nameLabel = document.createElement('div');
+                nameLabel.className = 'result-question';
+                nameLabel.textContent = 'Joueur / Équipe :';
+                
+                const nameValue = document.createElement('div');
+                nameValue.className = 'result-answer';
+                nameValue.style.fontSize = '1.3em';
+                nameValue.textContent = userChoices[0];
+                
+                nameItem.appendChild(nameLabel);
+                nameItem.appendChild(nameValue);
+                resultsContainer.appendChild(nameItem);
+            }
+
+            // Show the 4 investigation answers
             for (let i = 1; i <= 4; i++) {
                 if (userChoices[i]) {
                     const resultItem = document.createElement('div');
